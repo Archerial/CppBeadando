@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1609768698 source:c:\users\feri\documents\beadando\main.cpp
+	<iostream>
+	<stdlib.h>
+	<string>
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	"state_machine.hpp"
+
+1609868659 c:\users\feri\documents\beadando\vehicle.hpp
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1609868011 source:c:\users\feri\documents\beadando\vehicle.cpp
+	"vehicle.hpp"
+	<iostream>
+
+1609867502 c:\users\feri\documents\beadando\state_machine.hpp
+	<string>
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	<iostream>
+	<vector>
+
+1609870751 source:c:\users\feri\documents\beadando\state_machine.cpp
+	"state_machine.hpp"
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<vector>
+	<sstream>
+
+1609868372 c:\users\feri\documents\beadando\bus.hpp
+	"vehicle.hpp"
+
+1609868372 c:\users\feri\documents\beadando\van.hpp
+	"vehicle.hpp"
+
+1609868200 c:\users\feri\documents\beadando\workmachine.hpp
+	"vehicle.hpp"
+
+1609867995 source:c:\users\feri\documents\beadando\bus.cpp
+	"bus.hpp"
+	<iostream>
+
+1609867995 source:c:\users\feri\documents\beadando\van.cpp
+	"van.hpp"
+	<iostream>
+
+1609867995 source:c:\users\feri\documents\beadando\workmachine.cpp
+	"workmachine.hpp"
+	<iostream>
+
+1610119464 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.cpp
+	"bus.hpp"
+	<iostream>
+
+1610119506 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.hpp
+	"vehicle.hpp"
+
+1610119404 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.hpp
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1610121315 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\main.cpp
+	<iostream>
+	<stdlib.h>
+	<string>
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	"state_machine.hpp"
+
+1610119612 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.hpp
+	"vehicle.hpp"
+
+1610119670 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.hpp
+	"vehicle.hpp"
+
+1610269037 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.hpp
+	<string>
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	<iostream>
+	<vector>
+
+1610268672 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.cpp
+	"state_machine.hpp"
+	"vehicle.hpp"
+	"bus.hpp"
+	"van.hpp"
+	"workmachine.hpp"
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<vector>
+	<sstream>
+
+1610122164 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.cpp
+	"van.hpp"
+	<iostream>
+
+1610122196 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.cpp
+	"vehicle.hpp"
+	<iostream>
+
+1610122177 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.cpp
+	"workmachine.hpp"
+	<iostream>
+
