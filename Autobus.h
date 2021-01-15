@@ -1,17 +1,17 @@
 #ifndef _BUS_HPP_
 #define _BUS_HPP_
-#include "vehicle.hpp"
+#include "Vehicles.h"
 class Bus: public Vehicle
 {
 public:
-    Bus(string lp, int y, string t, int c, int u);
+    Bus(string lp, int y,int c, int u);
     Bus() {
-        setKind();
+        setType();
     }
 
-    string kind;
-    string getKind(){return kind;}
-    void setKind() {kind = "Bus";}
+    string type;
+    string getType(){return type;}
+    void setType() {type = "Busz";}
 
     static int service_m;
     static int getServiceReq(){

@@ -1,20 +1,19 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "vehicle.hpp"
-#include "bus.hpp"
-#include "van.hpp"
-#include "workmachine.hpp"
-#include "state_machine.hpp"
+#include "Vehicles.h"
+#include "Autobus.h"
+#include "Truck.h"
+#include "menu.h"
 using namespace std;
 
 #define BUFFSIZE 30
 int main()
 {
-    StateMachine stateMachine;
-    while(stateMachine.state() != StateMachine::EXIT) {
-        stateMachine.execute();
+    Menu menu;
+    while(menu.state() != Menu::EXIT) {
+        menu.execute();
     }
-    stateMachine.print();
+    menu.print();
     return 0;
 }

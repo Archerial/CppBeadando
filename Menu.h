@@ -2,21 +2,21 @@
 #define _STATE_MACHINE_HPP_
 
 #include <string>
-#include "vehicle.hpp"
-#include "bus.hpp"
-#include "van.hpp"
-#include "workmachine.hpp"
+#include "Vehicles.h"
+#include "Autobus.h"
+#include "Truck.h"
+#include "Machine.h"
 #include <iostream>
 #include <vector>
 
 #define STORAGESIZE 100
 using namespace std;
 
-class StateMachine
+class Menu
 {
 public:
-    StateMachine(): sm_act_state(READ_FROM_FILE), sm_index(0){}
-    ~StateMachine();
+    Menu(): sm_act_state(READ_FROM_FILE), sm_index(0){}
+    ~Menu();
 
     void read_From_File();
     void write_To_File();
@@ -32,7 +32,6 @@ public:
         LIST_SERVICE,
         LICENCE_PLATE,
         YEAR,
-        TYPE,
         CAPACITY,
         USAGE,
         LIST_A_VEHICLE,

@@ -1,17 +1,17 @@
-#include "state_machine.hpp"
-#include "vehicle.hpp"
-#include "bus.hpp"
-#include "van.hpp"
-#include "workmachine.hpp"
-#include <iostream>
+#include "Menu.h"
+#include "Vehicles.h"
+#include "Truck.h"
 #include <stdlib.h>
+#include "Autobus.h"
 #include <fstream>
-#include <vector>
+#include "Machine.h"
 #include <sstream>
+#include <iostream>
 
+#include <vector>
 using namespace std;
 
-void StateMachine::execute()
+void Menu::execute()
 {
     switch(sm_act_state) {
         case READ_FROM_FILE:{
@@ -84,13 +84,13 @@ void StateMachine::execute()
     int b_usage(0);
     int w_usage(0);
         for (int i = 0; i < sm_vector.size(); i++) {
-            if(sm_vector.at(i)->getKind() == "Van"){
+            if(sm_vector.at(i)->getType() == "Teherauto"){
                 v_usage = v_usage + sm_vector.at(i)->usage();
             }
-            if(sm_vector.at(i)->getKind() == "Bus"){
+            if(sm_vector.at(i)->getType() == "Busz"){
                 b_usage = b_usage + sm_vector.at(i)->usage();
             }
-            if(sm_vector.at(i)->getKind() == "WorkMachine"){
+            if(sm_vector.at(i)->getType() == "Munkagep"){
                 w_usage = w_usage + sm_vector.at(i)->usage();
             }
         }
@@ -98,7 +98,7 @@ void StateMachine::execute()
         cout << endl;
         cout << "Teherautok igenybevetele: " << v_usage << " km" << endl;
         cout << "Buszok igenybevetele: " << b_usage << " km" << endl;
-        cout << "Munkagépek igenybevetele: " << w_usage << " ora" << endl;
+        cout << "Munkagepek igenybevetele: " << w_usage << " ora" << endl;
         cout << endl;
         cout << "Back: b" << endl;
 
@@ -140,7 +140,7 @@ void StateMachine::execute()
             else if(s == '3'){
         cout << endl << "Munkagep: ";
             cin >> sm_buffer;
-                WorkMachine::setServiceReq(sm_buffer);;
+                Machine::setServiceReq(sm_buffer);;
                 sm_act_state = SET_SERVICE_REQUIREMENT;
                 break;
             }
@@ -157,18 +157,18 @@ void StateMachine::execute()
         system("CLS");
         cout << "Service required: " << endl;
         for (int i = 0; i < sm_vector.size(); i++) {
-            if(sm_vector.at(i)->getKind()=="Van"){
+            if(sm_vector.at(i)->getType()=="Teherauto"){
                 if(((Van*)sm_vector.at(i))->getServiceReq() < sm_vector.at(i)->usage()){
                     sm_vector.at(i)->print();
                 }
             }
-            if(sm_vector.at(i)->getKind()=="Bus"){
+            if(sm_vector.at(i)->getType()=="Busz"){
                 if(((Bus*)sm_vector.at(i))->getServiceReq() < sm_vector.at(i)->usage()){
                     sm_vector.at(i)->print();
                 }
             }
-            if(sm_vector.at(i)->getKind()=="WorkMachine"){
-                if(((WorkMachine*)sm_vector.at(i))->getServiceReq() < sm_vector.at(i)->usage()){
+            if(sm_vector.at(i)->getType()=="Munkagep"){
+                if(((Machine*)sm_vector.at(i))->getServiceReq() < sm_vector.at(i)->usage()){
                     sm_vector.at(i)->print();
                 }
             }
@@ -205,7 +205,7 @@ void StateMachine::execute()
         sm_vector.push_back(new Van);
         break;}
     case 'm':{
-        sm_vector.push_back(new WorkMachine);
+        sm_vector.push_back(new Machine);
         break;}
     default:{
         cout << endl << "Rossz tipus";
@@ -218,25 +218,26 @@ void StateMachine::execute()
                 sm_act_state = LICENCE_PLATE;
             else {
                 sm_vector.at(sm_index)->setLicencePlate(sm_buffer);
-                sm_act_state = TYPE;
+                sm_act_state = YEAR;
             }
             break;
         }
+        /*
         case TYPE:
             cout << endl << "Tipus";
             cin >> sm_buffer;
             if (sm_buffer[0] == '<')
                 sm_act_state = LICENCE_PLATE;
             else {
-                sm_vector.at(sm_index)->setType(sm_buffer);
+                //sm_vector.at(sm_index)->setType(sm_buffer);
                 sm_act_state = YEAR;
             }
-            break;
+            break;*/
         case YEAR:
             cout << endl << "Gyartasi ev: ";
             cin >> sm_buffer;
             if (sm_buffer[0] == '<')
-                sm_act_state = TYPE;
+                sm_act_state = LICENCE_PLATE;
             else {
                 sm_vector.at(sm_index)->setYearOfManufacturing(sm_buffer);
                 sm_act_state = CAPACITY;
@@ -284,7 +285,6 @@ void StateMachine::execute()
                 sm_act_state = MAIN_MENU;
                 break;
             }
-
             break;
         case LIST_ALL_VEHICLE:
 
@@ -292,7 +292,7 @@ void StateMachine::execute()
 
             print();
 
-            cout << "Next vehicle: n, Back: b" << endl;
+            cout << "Uj jarmu hozzadasa: n, Vissza: b" << endl;
             cin >> c;
             switch(c) {
             case 'n':
@@ -312,58 +312,57 @@ void StateMachine::execute()
             break;
         }
     }
-void StateMachine::read_From_File(){
+
+void Menu::read_From_File(){
     string line, l;
     vector<vector<string>> input;
     ifstream SaveFile("VehiclesList.txt");
     while(getline(SaveFile, line)){
-
         vector<string> strings;
 
         stringstream input_stream(line);
         while(getline(input_stream, l, ';')){
             strings.push_back(l);
         }
-
         input.push_back(strings);
     }
     SaveFile.close();
 
     for(int i = 0; i < input.size(); i++){
-        string tmpLicencePlate = input.at(i).at(0);
-        string tmpType = input.at(i).at(1);
-        int tmpProductionYear = stoi(input.at(i).at(2));
-        int tmpCapacity = stoi(input.at(i).at(3));
-        int tmpUsage = stoi(input.at(i).at(4));
+        string tempLP = input.at(i).at(0);
+        int tempYear = stoi(input.at(i).at(1));
+        int tempCap = stoi(input.at(i).at(2));
+        int tempUsage = stoi(input.at(i).at(3));
+        string tempType = input.at(i).at(4);
 
-        if(input.at(i).at(5) == "WorkMachine"){
-            sm_vector.push_back(new WorkMachine(tmpLicencePlate, tmpProductionYear, tmpType, tmpCapacity, tmpUsage));
+        if(input.at(i).at(4) == "Munkagep"){
+            sm_vector.push_back(new Machine(tempLP, tempYear, tempCap, tempUsage));
         }
-        if(input.at(i).at(5) == "Van"){
-            sm_vector.push_back(new Van(tmpLicencePlate, tmpProductionYear, tmpType, tmpCapacity, tmpUsage));
+        if(input.at(i).at(4) == "Teherauto"){
+            sm_vector.push_back(new Van(tempLP, tempYear, tempCap, tempUsage));
         }
-        if(input.at(i).at(5) == "Bus"){
-            sm_vector.push_back(new Bus(tmpLicencePlate, tmpProductionYear, tmpType, tmpCapacity, tmpUsage));
+        if(input.at(i).at(4) == "Busz"){
+            sm_vector.push_back(new Bus(tempLP, tempYear, tempCap, tempUsage));
         }
     }
     sm_index = sm_vector.size();
 }
-void StateMachine::write_To_File(){
+void Menu::write_To_File(){
   ofstream SaveFile("VehiclesList.txt", ofstream::trunc);
   if (SaveFile.is_open())
   {
     for(int i = 0; i < sm_vector.size(); i++){
-        SaveFile << sm_vector.at(i)->licencePlate() << ';' << sm_vector.at(i)->type() << ';' << sm_vector.at(i)->manufacturingYear() << ';' << sm_vector.at(i)->capacity() << ';' << sm_vector.at(i)->usage() << ';' << sm_vector.at(i)->getKind() << endl;
+        SaveFile << sm_vector.at(i)->licencePlate() << ';' << sm_vector.at(i)->manufacturingYear() << ';' << sm_vector.at(i)->capacity() << ';' << sm_vector.at(i)->usage() << ';' << sm_vector.at(i)->getType() << endl;
     }
     SaveFile.close();
   }
   else cout << "A fajlt nem lehetett megnyitni";
 }
-void StateMachine::print(){
-    for(int i = 0; i < sm_vector.size(); ++i) {
+void Menu::print(){
+    for(long i = 0; i < sm_vector.size(); ++i) {
         sm_vector.at(i)->print();
     }
 }
-StateMachine::~StateMachine(){
+Menu::~Menu(){
     sm_vector.clear();
 }

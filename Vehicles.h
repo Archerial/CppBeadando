@@ -10,8 +10,8 @@ using namespace std;
 class Vehicle
 {
 public:
-    Vehicle(string lp, int y, string t);
-    Vehicle(string lp, int y, string t, int c, int u);
+    Vehicle(string lp, int y);
+    Vehicle(string lp, int y, int c, int u);
     Vehicle() {}
     ~Vehicle();
 
@@ -19,9 +19,9 @@ public:
     string licencePlate() {return licencePlate_m;}
     void setLicencePlate(string);
 
-    string type_m;
-    string type() {return type_m;}
-    void setType(string t) {type_m = t;}
+    string type;
+    virtual void setType()=0;
+    virtual string getType()=0;
 
     int manufacturingYear_m;
     int manufacturingYear() {return manufacturingYear_m;}
@@ -34,10 +34,6 @@ public:
     int capacity_m;
     int capacity() {return capacity_m;}
     void setCapacity(string c) {capacity_m = atoi(c.c_str());}
-
-    string kind;
-    virtual void setKind()=0;
-    virtual string getKind()=0;
 
     void setServiceReq(string s);
 

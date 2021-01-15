@@ -60,35 +60,34 @@
 	"workmachine.hpp"
 	<iostream>
 
-1610119464 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.cpp
+1610277349 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.cpp
 	"bus.hpp"
 	<iostream>
 
-1610119506 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.hpp
+1610272200 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.hpp
 	"vehicle.hpp"
 
-1610119404 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.hpp
+1610277272 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.hpp
 	<string>
 	<stdlib.h>
 	<iostream>
 
-1610121315 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\main.cpp
+1610278054 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\main.cpp
 	<iostream>
 	<stdlib.h>
 	<string>
-	"vehicle.hpp"
-	"bus.hpp"
-	"van.hpp"
-	"workmachine.hpp"
-	"state_machine.hpp"
+	"Vehicles.h"
+	"Autobus.h"
+	"Truck.h"
+	"menu.h"
 
-1610119612 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.hpp
-	"vehicle.hpp"
-
-1610119670 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.hpp
+1610272181 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.hpp
 	"vehicle.hpp"
 
-1610269037 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.hpp
+1610276743 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.hpp
+	"vehicle.hpp"
+
+1610277454 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.hpp
 	<string>
 	"vehicle.hpp"
 	"bus.hpp"
@@ -97,7 +96,7 @@
 	<iostream>
 	<vector>
 
-1610268672 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.cpp
+1610277029 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\state_machine.cpp
 	"state_machine.hpp"
 	"vehicle.hpp"
 	"bus.hpp"
@@ -109,15 +108,68 @@
 	<vector>
 	<sstream>
 
-1610122164 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.cpp
+1610272117 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\van.cpp
 	"van.hpp"
 	<iostream>
 
-1610122196 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.cpp
+1610270301 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicle.cpp
 	"vehicle.hpp"
 	<iostream>
 
-1610122177 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.cpp
+1610276759 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\workmachine.cpp
 	"workmachine.hpp"
+	<iostream>
+
+1610277128 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\machine.cpp
+	"Machine.h"
+	<iostream>
+
+1610278021 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\machine.h
+	"Vehicles.h"
+
+1610277233 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\truck.cpp
+	"Truck.h"
+	<iostream>
+
+1610277985 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\truck.h
+	"Vehicles.h"
+
+1610277292 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\bus.h
+
+1610278043 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\menu.cpp
+	"Menu.h"
+	"Vehicles.h"
+	"Truck.h"
+	<stdlib.h>
+	"Autobus.h"
+	<fstream>
+	"Machine.h"
+	<sstream>
+	<iostream>
+	<vector>
+
+1610278012 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\menu.h
+	<string>
+	"Vehicles.h"
+	"Autobus.h"
+	"Truck.h"
+	"Machine.h"
+	<iostream>
+	<vector>
+
+1610277708 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\autobus.cpp
+	"Autobus.h"
+	<iostream>
+
+1610277979 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\autobus.h
+	"Vehicles.h"
+
+1610277875 source:c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicles.cpp
+	"Vehicles.h"
+	<iostream>
+
+1610277826 c:\users\adam\desktop\cpp beadandó\cplusplus-main\beadando\vehicles.h
+	<string>
+	<stdlib.h>
 	<iostream>
 

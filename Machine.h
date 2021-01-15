@@ -1,18 +1,18 @@
 #ifndef _WORKMACHINE_HPP_
 #define _WORKMACHINE_HPP_
-#include "vehicle.hpp"
+#include "Vehicles.h"
 
-class WorkMachine: public Vehicle
+class Machine: public Vehicle
 {
 public:
-    WorkMachine(string lp, int y, string t, int c, int u);
-    WorkMachine() {
-        setKind();
+    Machine(string lp, int y,int c, int u);
+    Machine() {
+        setType();
     }
 
-    string kind;
-    string getKind(){return kind;}
-    void setKind() {kind = "WorkMachine";}
+    string type;
+    string getType(){return type;}
+    void setType() {type = "Munkagep";}
 
     static int service_m;
     static int getServiceReq(){

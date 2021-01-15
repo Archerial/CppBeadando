@@ -1,6 +1,3 @@
-asd;asd;123;123;123;WorkMachine
-asd;asd;234;234;234;Van
-QWE-123;man;2001;40;200;Bus
-ASD-234;CAT;2002;12;30;WorkMachine
-asd;asd;123;123;123;Bus
-asd;asd;0;0;0;WorkMachine
+ASD-123;1999;40;40;Teherauto
+ASD-123;1999;50;40;Busz
+TES-123;2005;40;40;Busz

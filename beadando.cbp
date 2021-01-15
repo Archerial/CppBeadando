@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="../beadando" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="../beadando" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,17 +36,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="bus.cpp" />
-		<Unit filename="bus.hpp" />
+		<Unit filename="Autobus.cpp" />
+		<Unit filename="Autobus.h" />
+		<Unit filename="Machine.cpp" />
+		<Unit filename="Machine.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
+		<Unit filename="Truck.cpp" />
+		<Unit filename="Truck.h" />
+		<Unit filename="Vehicles.cpp" />
+		<Unit filename="Vehicles.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="state_machine.cpp" />
-		<Unit filename="state_machine.hpp" />
-		<Unit filename="van.cpp" />
-		<Unit filename="van.hpp" />
-		<Unit filename="vehicle.cpp" />
-		<Unit filename="vehicle.hpp" />
-		<Unit filename="workmachine.cpp" />
-		<Unit filename="workmachine.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
